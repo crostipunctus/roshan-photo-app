@@ -16,6 +16,16 @@ Rails.application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+  port: 587,
+  address: 'smtp.mailgun.org',
+  domain: 'https://roshan-photo-app.herokuapp.com',
+  user_name: Rails.application.credentials.mailgun[:username],
+  password: Rails.application.credentials.mailgun[:password],
+  authentication: :plain
+}
+
   # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"]
   # or in config/master.key. This key is used to decrypt credentials (and other encrypted files).
   # config.require_master_key = true
