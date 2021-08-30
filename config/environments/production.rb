@@ -17,7 +17,7 @@ Rails.application.configure do
   config.action_controller.perform_caching = true
 
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options[:host => 'roshan-photo-app.herokuapp.com']
+  config.action_mailer.default_url_options = [:host => 'roshan-photo-app.herokuapp.com']
   config.action_mailer.smtp_settings = {
   port: 587,
   address: 'smtp.mailgun.org',
@@ -25,7 +25,6 @@ Rails.application.configure do
   user_name: Rails.application.credentials.mailgun[:username],
   password: Rails.application.credentials.mailgun[:password],
   authentication: :plain
-  
 }
 
   # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"]
