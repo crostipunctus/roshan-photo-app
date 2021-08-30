@@ -17,7 +17,7 @@ Rails.application.configure do
   config.action_controller.perform_caching = true
 
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = [:host => 'roshan-photo-app.herokuapp.com']
+  config.action_mailer.default_url_options = { :host => 'roshan-photo-app.herokuapp.com' }
   config.action_mailer.smtp_settings = {
   port: 587,
   address: 'smtp.mailgun.org',
